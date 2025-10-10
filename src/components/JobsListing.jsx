@@ -9,10 +9,10 @@ const JobsListing = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const { data } = await axios.get('http://localhost:5000/api/jobs/fetch');
+        const { data } = await axios.get('https://gowithflow-backend.onrender.com/api/jobs/fetch');
         const jobsWithClient = await Promise.all(
           data.jobs.map(async (job) => {
-            const client = await axios.get(`http://localhost:5000/api/user/${job.createdBy}`);
+            const client = await axios.get(`https://gowithflow-backend.onrender.com/api/user/${job.createdBy}`);
             return { ...job, client: client.data.user };
           })
         );

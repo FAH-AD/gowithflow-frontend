@@ -126,7 +126,7 @@ const Messaging = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        "http://localhost:5000/api/messages/conversations",
+        "https://gowithflow-backend.onrender.com/api/messages/conversations",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -169,7 +169,7 @@ const Messaging = () => {
   const fetchConversationById = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/messages/conversations/${id}`,
+        `https://gowithflow-backend.onrender.com/api/messages/conversations/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -206,7 +206,7 @@ const Messaging = () => {
   const fetchMessages = async (conversationId, page = 1) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/messages/conversations/${conversationId}`,
+        `https://gowithflow-backend.onrender.com/api/messages/conversations/${conversationId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -289,7 +289,7 @@ const Messaging = () => {
       if (jobId) payload.jobId = jobId;
 
       const response = await fetch(
-        "http://localhost:5000/api/messages/conversations",
+        "https://gowithflow-backend.onrender.com/api/messages/conversations",
         {
           method: "POST",
           headers: {
@@ -350,7 +350,7 @@ const Messaging = () => {
       scrollToBottom();
       if (!customMessage) setNewMessage(""); // Only clear if it's not a custom message
 
-      const response = await fetch("http://localhost:5000/api/messages", {
+      const response = await fetch("https://gowithflow-backend.onrender.com/api/messages", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -456,7 +456,7 @@ const Messaging = () => {
       scrollToBottom();
 
       // Send files to server
-      const response = await fetch("http://localhost:5000/api/messages", {
+      const response = await fetch("https://gowithflow-backend.onrender.com/api/messages", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -570,7 +570,7 @@ const Messaging = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/messages/${messageId}`,
+        `https://gowithflow-backend.onrender.com/api/messages/${messageId}`,
         {
           method: "DELETE",
           headers: {
@@ -599,7 +599,7 @@ const Messaging = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/messages/conversations/${conversationId}`,
+        `https://gowithflow-backend.onrender.com/api/messages/conversations/${conversationId}`,
         {
           method: "DELETE",
           headers: {
@@ -793,7 +793,7 @@ const Messaging = () => {
 
   const createZoomMeeting = async (topic) => {
     try {
-      const response = await fetch("http://localhost:5000/api/zoom/meeting", {
+      const response = await fetch("https://gowithflow-backend.onrender.com/api/zoom/meeting", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

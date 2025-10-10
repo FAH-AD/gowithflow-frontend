@@ -12,7 +12,7 @@ export const checkAuthStatus = createAsyncThunk(
       }
       
       // You can create a simple endpoint on your backend to verify the token
-      const response = await axios.get('http://localhost:5000/api/auth/verify', {
+      const response = await axios.get('https://gowithflow-backend.onrender.com/api/auth/verify', {
         headers: { Authorization: `Bearer ${token}` }
       });
       
@@ -29,7 +29,7 @@ export const fetchUserProfile = createAsyncThunk(
   async (_, { rejectWithValue, getState }) => {
     try {
       const token = getState().auth.token;
-      const response = await axios.get('http://localhost:5000/api/user-profile/profile', {
+      const response = await axios.get('https://gowithflow-backend.onrender.com/api/user-profile/profile', {
         headers: { Authorization: `Bearer ${token}` }
       });
       return response.data;

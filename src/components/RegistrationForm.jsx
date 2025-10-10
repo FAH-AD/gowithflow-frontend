@@ -200,7 +200,7 @@ export default function FreelancerRegistrationForm() {
             setUploading(true); // start loader
 
             try {
-                const res = await fetch('http://localhost:5000/api/upload', {
+                const res = await fetch('https://gowithflow-backend.onrender.com/api/upload', {
                     method: 'POST',
                     body: data,
                 });
@@ -230,7 +230,7 @@ export default function FreelancerRegistrationForm() {
             data.append('document', file);
 
             try {
-                const res = await fetch('http://localhost:5000/api/upload', {
+                const res = await fetch('https://gowithflow-backend.onrender.com/api/upload', {
                     method: 'POST',
                     body: data,
                 });

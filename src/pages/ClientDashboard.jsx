@@ -100,7 +100,7 @@ const ClientDashboard = () => {
   // Fetch user profile data
   const fetchProfile = async () => {
     try {
-      const response = await fetchWithTimeout(`http://localhost:5000/api/user-profile/${user._id}`, {
+      const response = await fetchWithTimeout(`https://gowithflow-backend.onrender.com/api/user-profile/${user._id}`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -129,7 +129,7 @@ const ClientDashboard = () => {
   // Fetch posted jobs
   const fetchPostedJobs = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/jobs/my/posted-jobs', {
+      const response = await fetch('https://gowithflow-backend.onrender.com/api/jobs/my/posted-jobs', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -153,7 +153,7 @@ const ClientDashboard = () => {
   // Fetch active and completed jobs
   const fetchActiveJobs = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/jobs/user/active-jobs', {
+      const response = await fetch('https://gowithflow-backend.onrender.com/api/jobs/user/active-jobs', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -177,7 +177,7 @@ const ClientDashboard = () => {
   // Fetch conversations for unread messages
   const fetchConversations = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/messages/conversations?limit=50', {
+      const response = await fetch('https://gowithflow-backend.onrender.com/api/messages/conversations?limit=50', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,

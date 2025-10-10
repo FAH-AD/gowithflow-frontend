@@ -101,7 +101,7 @@ const Freelancer = () => {
    const fetchJobs = async () => {
      setIsJobsLoading(true)
      try {
-       const response = await axios.get("http://localhost:5000/api/jobs", {
+       const response = await axios.get("https://gowithflow-backend.onrender.com/api/jobs", {
          headers: {
            'Authorization': `Bearer ${token}`
          }
@@ -138,7 +138,7 @@ const Freelancer = () => {
 
  const saveJob = async (jobId) => {
   try {
-    await axios.post(`http://localhost:5000/api/jobs/${jobId}/save`, {}, {
+    await axios.post(`https://gowithflow-backend.onrender.com/api/jobs/${jobId}/save`, {}, {
       headers: {
         'Authorization': `Bearer ${token}`
       }
@@ -158,7 +158,7 @@ const Freelancer = () => {
 
 const unsaveJob = async (jobId) => {
   try {
-    await axios.delete(`http://localhost:5000/api/jobs/${jobId}/unsave`, {
+    await axios.delete(`https://gowithflow-backend.onrender.com/api/jobs/${jobId}/unsave`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }

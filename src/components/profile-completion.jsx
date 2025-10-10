@@ -10,7 +10,7 @@ const ProfileCompletion = ({ userId }) => {
   useEffect(() => {
     const fetchProfileData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/user-profile/${userId}`)
+        const response = await axios.get(`https://gowithflow-backend.onrender.com/api/user-profile/${userId}`)
         const user = response.data.data.user
         console.log(user, "user in profile completion")
         setProfileData(user)

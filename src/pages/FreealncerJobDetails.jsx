@@ -64,7 +64,7 @@ const FreelancerJobDetails = () => {
     setError(null);
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/jobs/${jobId}`,
+        `https://gowithflow-backend.onrender.com/api/jobs/${jobId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -145,7 +145,7 @@ const FreelancerJobDetails = () => {
       };
 
       await axios.post(
-        `http://localhost:5000/api/freelancer/jobs/${jobId}/milestones/${submittingMilestone._id}/submit`,
+        `https://gowithflow-backend.onrender.com/api/freelancer/jobs/${jobId}/milestones/${submittingMilestone._id}/submit`,
         submissionData,
         {
           headers: {

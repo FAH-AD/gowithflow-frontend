@@ -71,7 +71,7 @@ const ClientJobDetails = () => {
     setError(null);
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/jobs/${jobId}`,
+        `https://gowithflow-backend.onrender.com/api/jobs/${jobId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -125,7 +125,7 @@ const ClientJobDetails = () => {
   const fetchFreelancerProfile = async (freelancerId) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/user-profile/${freelancerId}`,
+        `https://gowithflow-backend.onrender.com/api/user-profile/${freelancerId}`,
         {
           method: "GET",
           headers: {
@@ -153,7 +153,7 @@ const ClientJobDetails = () => {
     try {
       setApprovingMilestone(milestoneId);
       await axios.put(
-        `http://localhost:5000/api/jobs/${jobId}/milestones/${milestoneId}/approve`,
+        `https://gowithflow-backend.onrender.com/api/jobs/${jobId}/milestones/${milestoneId}/approve`,
         {},
         {
           headers: {
@@ -172,7 +172,7 @@ const ClientJobDetails = () => {
   const handleRequestRevision = async (milestoneId) => {
     try {
       await axios.post(
-        `http://localhost:5000/api/jobs/${jobId}/milestones/${milestoneId}/requestRevision`,
+        `https://gowithflow-backend.onrender.com/api/jobs/${jobId}/milestones/${milestoneId}/requestRevision`,
         {},
         {
           headers: {
@@ -242,7 +242,7 @@ const ClientJobDetails = () => {
           return;
         }
         await axios.post(
-          `http://localhost:5000/api/jobs/${jobId}/milestones`,
+          `https://gowithflow-backend.onrender.com/api/jobs/${jobId}/milestones`,
           {
             freelancerId: job.hiredFreelancer,
 

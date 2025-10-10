@@ -37,7 +37,7 @@ const ClientTeams = () => {
     const fetchTeams = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/jobs/client/teams",
+          "https://gowithflow-backend.onrender.com/api/jobs/client/teams",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -78,7 +78,7 @@ const ClientTeams = () => {
     try {
       setApprovingMilestoneId(milestoneId);
       await axios.put(
-        `http://localhost:5000/api/jobs/${jobId}/milestones/${milestoneId}/approve`,
+        `https://gowithflow-backend.onrender.com/api/jobs/${jobId}/milestones/${milestoneId}/approve`,
         {},
         {
           headers: {
@@ -89,7 +89,7 @@ const ClientTeams = () => {
 
       // Refresh the team data
       const response = await axios.get(
-        "http://localhost:5000/api/jobs/client/teams",
+        "https://gowithflow-backend.onrender.com/api/jobs/client/teams",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -121,7 +121,7 @@ const ClientTeams = () => {
     try {
       // You'll need to implement this API endpoint on your backend
       await axios.post(
-        `http://localhost:5000/api/jobs/${jobId}/freelancer/${freelancerId}/milestone/${milestoneId}/requestRevision`,
+        `https://gowithflow-backend.onrender.com/api/jobs/${jobId}/freelancer/${freelancerId}/milestone/${milestoneId}/requestRevision`,
         {},
         {
           headers: {
@@ -131,7 +131,7 @@ const ClientTeams = () => {
       );
 
       // Refresh the team data
-      const response = await axios.get("http://localhost:5000/api/jobs/teams", {
+      const response = await axios.get("https://gowithflow-backend.onrender.com/api/jobs/teams", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -171,7 +171,7 @@ const ClientTeams = () => {
 
       try {
         await axios.post(
-          `http://localhost:5000/api/jobs/${jobId}/milestones`,
+          `https://gowithflow-backend.onrender.com/api/jobs/${jobId}/milestones`,
           {
             freelancerId,
             title,
@@ -190,7 +190,7 @@ const ClientTeams = () => {
 
         // Refresh the team data
         const response = await axios.get(
-          "http://localhost:5000/api/jobs/client/teams",
+          "https://gowithflow-backend.onrender.com/api/jobs/client/teams",
           {
             headers: {
               Authorization: `Bearer ${token}`,

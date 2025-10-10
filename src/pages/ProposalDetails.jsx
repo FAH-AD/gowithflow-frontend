@@ -52,7 +52,7 @@ const ProposalDetails = () => {
 
     try {
       // Fetch job details
-      const jobResponse = await fetch(`http://localhost:5000/api/jobs/${jobId}`, {
+      const jobResponse = await fetch(`https://gowithflow-backend.onrender.com/api/jobs/${jobId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         },
@@ -68,7 +68,7 @@ const ProposalDetails = () => {
       
       // Fetch client profile
       if (jobData.data.client) {
-        const clientResponse = await fetch(`http://localhost:5000/api/users/${jobData.data.client}`, {
+        const clientResponse = await fetch(`https://gowithflow-backend.onrender.com/api/users/${jobData.data.client}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -82,7 +82,7 @@ const ProposalDetails = () => {
       }
 
       // Fetch bid statistics
-      const statsResponse = await fetch(`http://localhost:5000/api/bids/stats/${jobId}`, {
+      const statsResponse = await fetch(`https://gowithflow-backend.onrender.com/api/bids/stats/${jobId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -96,7 +96,7 @@ const ProposalDetails = () => {
 
       // Check if user has already bid on this job
       if (user.role === "freelancer") {
-        const userBidResponse = await fetch(`http://localhost:5000/api/bids/job/${jobId}/my-bid`, {
+        const userBidResponse = await fetch(`https://gowithflow-backend.onrender.com/api/bids/job/${jobId}/my-bid`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

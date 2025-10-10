@@ -14,7 +14,7 @@ const JobDetails = () => {
   useEffect(() => {
     const fetchJob = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:5000/api/jobs/${id}`);
+        const { data } = await axios.get(`https://gowithflow-backend.onrender.com/api/jobs/${id}`);
        console.log(data, "data in job details");
         setJob({ ...data.job});
         

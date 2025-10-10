@@ -13,7 +13,7 @@ class WebSocketSingleton {
     }
 
     init(token) {
-        this.socket = io("http://localhost:5000", {
+        this.socket = io("https://gowithflow-backend.onrender.com", {
             query: { token },
             reconnection: true,
         });

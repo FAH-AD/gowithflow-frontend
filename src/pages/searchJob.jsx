@@ -55,7 +55,7 @@ export default function JobSearchPage() {
   const fetchJobs = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("http://localhost:5000/api/jobs/fetch");
+      const res = await axios.get("https://gowithflow-backend.onrender.com/api/jobs/fetch");
       setJobsData(res.data.jobs);
       console.log(jobsData)
     } catch (err) {

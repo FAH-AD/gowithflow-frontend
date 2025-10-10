@@ -24,7 +24,7 @@ const Navbar = () => {
       if (isAuthenticated && user?.role === 'client' && token) {
         console.log("Attempting to fetch profile with token:", token);
         try {
-          const response = await fetch(`http://localhost:5000/api/user-profile/${user._id}`, {
+          const response = await fetch(`https://gowithflow-backend.onrender.com/api/user-profile/${user._id}`, {
             method: 'GET',
             headers: {
               'Authorization': `Bearer ${token}`,

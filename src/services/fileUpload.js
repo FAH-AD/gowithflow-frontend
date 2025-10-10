@@ -3,7 +3,7 @@ export const uploadFile = async (file) => {
     formData.append('file', file);
   
     try {
-      const response = await fetch('http://localhost:5000/api/upload/test-upload', {
+      const response = await fetch('https://gowithflow-backend.onrender.com/api/upload/test-upload', {
         method: 'POST',
         body: formData,
       });

@@ -86,7 +86,7 @@ const SearchFreelancers = () => {
       params.set("page", searchParams.page.toString())
       params.set("limit", searchParams.limit.toString())
 
-      const response = await fetch(`http://localhost:5000/api/freelancer/search?${params.toString()}`, {
+      const response = await fetch(`https://gowithflow-backend.onrender.com/api/freelancer/search?${params.toString()}`, {
         method: "GET",
         
       })

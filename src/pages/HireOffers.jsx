@@ -47,7 +47,7 @@ const HireOffers = () => {
     setError(null)
 
     try {
-      const response = await axios.get("http://localhost:5000/api/freelancer/offers/pending", {
+      const response = await axios.get("https://gowithflow-backend.onrender.com/api/freelancer/offers/pending", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,
         },
@@ -82,7 +82,7 @@ const HireOffers = () => {
         await handleRespondToTeamOffer(jobId, offerId, accept)
       }else{
       await axios.post(
-        `http://localhost:5000/api/freelancer/jobs/${jobId}/offer/${offerId}/respond`,
+        `https://gowithflow-backend.onrender.com/api/freelancer/jobs/${jobId}/offer/${offerId}/respond`,
         {
           accept: accept,
         },
@@ -120,7 +120,7 @@ const HireOffers = () => {
 
     try {
       await axios.post(
-        `http://localhost:5000/api/freelancer/jobs/${jobId}/team-offer/${offerId}/respond`,
+        `https://gowithflow-backend.onrender.com/api/freelancer/jobs/${jobId}/team-offer/${offerId}/respond`,
         {
           accept: accept,
         },

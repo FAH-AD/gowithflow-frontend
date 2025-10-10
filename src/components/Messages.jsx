@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
 import axios from "axios";
 
-const socket = io("http://localhost:5000");
+const socket = io("https://gowithflow-backend.onrender.com");
 
 const Chat = ({ jobId, clientId, freelancerId, currentUser }) => {
     const [messages, setMessages] = useState([]);
@@ -11,7 +11,7 @@ const Chat = ({ jobId, clientId, freelancerId, currentUser }) => {
     useEffect(() => {
         socket.emit("joinRoom", { jobId });
 
-        axios.get(`http://localhost:5000/chat/${jobId}`)
+        axios.get(`https://gowithflow-backend.onrender.com/chat/${jobId}`)
             .then(response => setMessages(response.data))
             .catch(error => console.error(error));
 
@@ -29,7 +29,7 @@ const Chat = ({ jobId, clientId, freelancerId, currentUser }) => {
         const newMessage = { jobId, senderId: currentUser, text: message };
 
         try {
-            await axios.post("http://localhost:5000/api/messages/message", newMessage);
+            await axios.post("https://gowithflow-backend.onrender.com/api/messages/message", newMessage);
             socket.emit("sendMessage", newMessage);
             setMessage("");
         } catch (error) {

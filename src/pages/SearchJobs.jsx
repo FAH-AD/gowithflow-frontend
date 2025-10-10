@@ -95,7 +95,7 @@ const SearchJobs = () => {
       params.set("page", searchParams.page.toString())
       params.set("limit", searchParams.limit.toString())
 
-      const response = await fetch(`http://localhost:5000/api/jobs/search?${params.toString()}`, {
+      const response = await fetch(`https://gowithflow-backend.onrender.com/api/jobs/search?${params.toString()}`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,

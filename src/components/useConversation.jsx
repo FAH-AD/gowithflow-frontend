@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import io from "socket.io-client";
 
-const SOCKET_URL = "http://localhost:5000"; // Adjust to your server
+const SOCKET_URL = "https://gowithflow-backend.onrender.com"; // Adjust to your server
 const API_URL = `${SOCKET_URL}/api/messages/conversations`;
 
 const useConversation = ({ user }) => {

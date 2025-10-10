@@ -28,7 +28,7 @@ const HirePopup = ({ bid, onClose, jobId, isCrowdsourced = false, roles = [], fr
         // For crowdsourced jobs, use the team API
         console.log("freelancerId in hire popup", freelancerId)
         response = await axios.post(
-          `http://localhost:5000/api/jobs/${jobId}/team/${bid}`,
+          `https://gowithflow-backend.onrender.com/api/jobs/${jobId}/team/${bid}`,
           {
             freelancerId: freelancerId || bid.freelancer._id,
             roleTitle,
@@ -46,7 +46,7 @@ const HirePopup = ({ bid, onClose, jobId, isCrowdsourced = false, roles = [], fr
       } else {
         // For regular jobs, use the hire API
         response = await axios.post(
-          `http://localhost:5000/api/jobs/${jobId}/hire/${bid}`,
+          `https://gowithflow-backend.onrender.com/api/jobs/${jobId}/hire/${bid}`,
           {
             milestoneTitle,
             milestoneDescription,

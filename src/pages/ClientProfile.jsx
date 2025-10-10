@@ -53,7 +53,7 @@ const ClientProfile = () => {
     setError(null)
 
     try {
-      const response = await fetch(`http://localhost:5000/api/user-profile/${user._id}`, {
+      const response = await fetch(`https://gowithflow-backend.onrender.com/api/user-profile/${user._id}`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,
@@ -178,7 +178,7 @@ const ClientProfile = () => {
   
       console.log("Data to send for profile update:", dataToSend)
   
-      const response = await fetch(`http://localhost:5000/api/user-profile/${user._id}`, {
+      const response = await fetch(`https://gowithflow-backend.onrender.com/api/user-profile/${user._id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

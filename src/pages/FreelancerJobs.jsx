@@ -54,7 +54,7 @@ const FreelancerJobs = () => {
 
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/jobs/user/active-jobs",
+          "https://gowithflow-backend.onrender.com/api/jobs/user/active-jobs",
           {
             headers: {
               Authorization: `Bearer ${token}`,

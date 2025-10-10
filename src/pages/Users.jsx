@@ -85,7 +85,7 @@ const AdminUsers = () => {
     // Test basic connectivity
     try {
       console.log('Testing basic connectivity...');
-      const testResponse = await fetch('http://localhost:5000/api/admin/users', {
+      const testResponse = await fetch('https://gowithflow-backend.onrender.com/api/admin/users', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('authToken')}`,
           'Content-Type': 'application/json'
