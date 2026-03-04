@@ -51,7 +51,7 @@ export default function HomePage() {
       if (token) {
         navigate('/jobs');
       }
-      else{
+      else {
         navigate('/login', { state: { from: '/jobs', message: 'Please login to access the job board' } });
       }
       // when !token: use Link in render so user goes to /login with state
@@ -60,7 +60,7 @@ export default function HomePage() {
 
   return (
     <div
-      className="min-h-screen mt-10 text-white overflow-hidden"
+      className="min-h-screen pt-10 text-white overflow-hidden"
       style={{
         background: 'linear-gradient(135deg, #030815 0%, #0a0e27 20%, #050d1a 40%, #12a1e2 60%, #030815 80%, #0a0e27 100%)',
       }}
